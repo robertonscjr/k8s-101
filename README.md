@@ -1,4 +1,4 @@
-# kubeinit
+# kube-devops
 
 OS: Ubuntu 20.04
 
