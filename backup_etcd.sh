@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Cluster resilience
+## https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#resilience
+
 SRC_FOLDER="/var/lib/etcd"
 BKP_FOLDER="etcd-$(date +"%m-%d-%y-%H-%M-%S")"
 
@@ -18,4 +21,3 @@ rm -rf $BKP_FOLDER
 rm -rf $BKP_FOLDER.tar.gz
 
 echo "backup done"
-
