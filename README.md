@@ -4,7 +4,6 @@ This repository aims to facilitate the deployment of a Kubernetes cluster that h
 
 For this repository to work, you need **ssh access** to the nodes and some allowed ports for access through [**kubectl**](https://kubernetes.io/pt/docs/reference/kubectl/cheatsheet/). 
 
-
 ---
 
 ## Node Requirements
@@ -28,6 +27,8 @@ The client is the machine where **kubectl** will be configured, which is the com
 Requirements:
 
 * Python 3.5+
+
+---
 
 ## Network Access Requirements
 
