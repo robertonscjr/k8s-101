@@ -18,6 +18,8 @@ Node minimal setup:
 * RAM: 2GB
 * OS: Ubuntu 20.04
 
+```ansible-playbook -i nodes control-plane.yml --key-file "~/.ssh/NODE_PK"```
+
 ---
 
 ## Client Requirements
