@@ -25,6 +25,10 @@ Node minimal setup:
 
 The client is the machine where **kubectl** will be configured, which is the command we use to interact with the **Control Plane Node**. 
 
+Requirements:
+
+* Python 3.5+
+
 ## Network Access Requirements
 
 To configure the required port accesses for the nodes, see [**Check required ports**](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#check-required-ports).
