@@ -5,6 +5,8 @@ WORKER_NODE_IP=`cat nodes | grep -A 1 worker | grep -v worker`
 
 if [ -z "${CONTROL_PLANE_NODE_IP}" ] || [ -z "${WORKER_NODE_IP}" ]; then
     echo "[control-plane] or [worker] not defined in 'nodes' file"
+elif [ -z "$SSH_KEYFILE" ]; then
+    echo "please set SSH_KEYFILE env var"
 else
     if [ -d venv ]; then
         rm -rf venv
