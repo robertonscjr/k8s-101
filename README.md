@@ -4,6 +4,8 @@ This repository aims to facilitate the deployment of a Kubernetes cluster that h
 
 For this repository to work, you need **ssh access** to the nodes and some allowed ports for access the **Control Plane Node** through [**kubectl**](https://kubernetes.io/pt/docs/reference/kubectl/cheatsheet/). 
 
+Follow the order of the documentation for a better experience!
+
 ## Node Requirements
 
 A Node in Kubernetes is literally the machine (bare metal or virtual machine) on which the K8s components will be installed.
