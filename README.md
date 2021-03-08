@@ -61,3 +61,15 @@ $ bash run.sh
 ```
 
 Installation and configuration usually takes a few minutes...
+
+After every setup finished, test if you can see the nodes of your Kubernetes cluster:
+```bash
+$ kubectl get nodes
+
+NAME                     STATUS       ROLES     AGE     VERSION
+kubernetes-node-1        Ready        master    1h      v1.13.0
+kubernetes-node-2        Ready        <none>    1h      v1.13.0
+kubernetes-node-3        Ready        <none>    1h      v1.13.0
+```
+
+Done! **Your cluster is ready for the action!**
