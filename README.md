@@ -37,7 +37,25 @@ In the case of using VMs, the cloud providers have the area for configuring **Se
 
 ## Run
 
-If you followed the previous steps, ensuring that the restrictions for each section are resolved, run:
+If you followed the previous steps, ensuring that the restrictions for each section are resolved, set the environment variable of the key which will be used to access the nodes:
+```bash
+$ export SSH_KEYFILE="~/.ssh/NODE_PK"
+```
+
+Edit the [**nodes**](nodes) file with the IPs of the hosts:
+```bash
+$ # edit this file with your node/host/VM IPs
+$ cat nodes
+
+[control-plane]
+10.0.0.1
+
+[worker]
+10.0.0.2
+10.0.0.3
+```
+
+Finally, run:
 ```bash
 $ bash run.sh
 ```
