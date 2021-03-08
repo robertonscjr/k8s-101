@@ -6,6 +6,10 @@ WORKER_NODE_IP=`cat nodes | grep -A 1 worker | grep -v worker`
 if [ -z "${CONTROL_PLANE_NODE_IP}" ] || [ -z "${WORKER_NODE_IP}" ]; then
     echo "[control-plane] or [worker] not defined in 'nodes' file"
 else
+    if [ -d venv ]; then
+        rm -rf venv
+    fi
+
     echo "configuring python3 venv"
     virtualenv -p python3 venv
     source venv/bin/activate
