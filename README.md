@@ -44,7 +44,7 @@ If you followed the previous steps, ensuring that the restrictions for each sect
 $ export SSH_KEYFILE="~/.ssh/NODE_PK"
 ```
 
-Edit the [**nodes**](nodes) file with the IPs of the hosts:
+Edit the [**nodes file**](nodes) with the IPs of the hosts:
 ```bash
 $ # edit this file with your node/host/VM IPs
 $ cat nodes
