@@ -1,0 +1,26 @@
+- name: deploy k8s control plane node
+  hosts: control-plane
+  remote_user: ubuntu
+
+  become: yes
+
+  tasks:
+    - name: Remove old repository
+      file:
+        path: /tmp/quickstart-k8s/
+        state: absent
+
+    - name: Clone git repository
+      git: repo=https://github.com/robertonscjr/quickstart-k8s.git dest=/tmp/quickstart-k8s/
+
+    - name: Setup control plane node
+      shell: bash /tmp/quickstart-k8s/bootstrap/1-setup_node.sh
+
+    - name: Install docker container engine
+      shell: bash /tmp/quickstart-k8s/bootstrap/2-install_docker.sh
+
+    - name: Install k8s tools
+      shell: bash /tmp/quickstart-k8s/bootstrap/3-install_kubetools.sh
+
+    - name: Deploy k8s control plane node
+      shell: bash /tmp/quickstart-k8s/bootstrap/4-deploy_control_plane.sh
