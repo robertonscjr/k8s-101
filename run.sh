@@ -11,7 +11,7 @@ else
     if [ -d venv ]; then
         rm -rf venv
     fi
-
+ 
     echo "configuring python3 venv"
     virtualenv -p python3 venv
     source venv/bin/activate
@@ -38,4 +38,7 @@ else
     
     echo "start worker nodes setup"
     ansible-playbook -i nodes worker.yml -e CONTROL_PLANE_NODE_IP=$CONTROL_PLANE_NODE_IP -e TOKEN=$TOKEN -e DISCOVERY_TOKEN_HASH=$DISCOVERY_TOKEN_HASH --key-file "$SSH_KEYFILE"
+
+    echo "install kubernet (calico)"
+    kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 fi
