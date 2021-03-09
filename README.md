@@ -75,3 +75,34 @@ kubernetes-node-3        Ready        <none>    1h      v1.13.0
 ```
 
 Done! **Your cluster is ready for the action!**
+
+## Troubleshooting
+
+### 1. SSH Issue: REMOTE HOST IDENTIFICATION HAS CHANGED!
+
+To use this repository successfully, **you must ensure that you have ssh access to the instances where the nodes will be configured**.
+
+A very common issue is remote host identification. This problem happens because the host trying to be accessed via ssh contains an old identification fingerprint. This fingerprint can be seen in the **/home/YOURUSER/.ssh/known_hosts** file.
+
+```bash
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                       
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @                       
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                       
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!                             
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!       
+It is also possible that a host key has just been changed.                        
+The fingerprint for the ECDSA key sent by the remote host is                      
+SHA256:Ftc30kXYMapvIdIbeIpel+dhfsL9LRFt7LEGa1I1lfk.                               
+Please contact your system administrator.
+Add correct host key in /home/YOURUSER/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/YOURUSER/.ssh/known_hosts:47                          
+  remove with:
+  ssh-keygen -f "/home/YOURUSER/.ssh/known_hosts" -R "10.0.0.1"                 
+ECDSA host key for 10.0.0.1 has changed and you have requested strict checking.
+Host key verification failed.
+```
+
+To solve, just **execute the command described in the error log, changing only the IP of the host you want to access**:
+```bash
+ssh-keygen -f "/home/roberto/.ssh/known_hosts" -R "10.0.0.1" 
+```
