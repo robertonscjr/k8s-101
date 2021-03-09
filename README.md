@@ -28,6 +28,7 @@ Requirements:
 
 * python 3.6+
 * virtualenv
+* OS: Debian-based distro
 
 You need **superuser access** to be able to install the requirements.
 
