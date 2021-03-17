@@ -107,3 +107,8 @@ To solve, just **execute the command described in the error log, changing only t
 ```bash
 ssh-keygen -f "/home/roberto/.ssh/known_hosts" -R "10.0.0.1" 
 ```
+
+### 2. DNS Issue
+
+- https://stackoverflow.com/questions/58707391/kubernetes-dns-lookup-issue-and-invalid-in-the-etc-resolv-conf-file
+- https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/
